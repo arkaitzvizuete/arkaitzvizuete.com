@@ -1,7 +1,7 @@
 export const TwentyThreePage = () => {
     return (
         <div>
-            23
+             <p>23 Page</p>
         </div>
     )
 }
