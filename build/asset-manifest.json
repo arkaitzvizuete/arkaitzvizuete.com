@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "./static/js/main.3a4a0991.js",
-    "index.html": "./index.html",
-    "main.3a4a0991.js.map": "./static/js/main.3a4a0991.js.map"
+    "main.js": "/arkaitzvizuete.com/static/js/main.3a4a0991.js",
+    "index.html": "/arkaitzvizuete.com/index.html",
+    "main.3a4a0991.js.map": "/arkaitzvizuete.com/static/js/main.3a4a0991.js.map"
   },
   "entrypoints": [
     "static/js/main.3a4a0991.js"
