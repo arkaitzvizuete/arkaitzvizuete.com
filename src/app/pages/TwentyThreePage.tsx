@@ -1,7 +1,7 @@
 export const TwentyThreePage = () => {
     return (
         <div>
-             <p>23 Page</p>
+             <h1>23</h1>
         </div>
     )
 }

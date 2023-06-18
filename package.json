@@ -1,7 +1,7 @@
 {
   "name": "arkaitzvizuete.com",
   "version": "0.1.0",
-  "homepage": "https://arkaitzvizuete.github.io/arkaitzvizuete.com",
+  "homepage": "https://arkaitzvizuete.com",
   "private": true,
   "dependencies": {
     "@types/node": "^16.18.36",
