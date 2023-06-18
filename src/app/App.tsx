@@ -8,10 +8,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/" element={<HomePage/>} />
-      <Route path="/23" element={<TwentyThreePage/>} />
-      <Route path='/*' element={<NotFoundPage/>} />
-    </Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/23" element={<TwentyThreePage/>} />
+        <Route path='*' element={<NotFoundPage/>} />
+      </Routes>
     </BrowserRouter>
   );
 }
