@@ -23,7 +23,7 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    
+
     padding: 0;
     margin: 0;
 `
@@ -33,6 +33,7 @@ const AlignmentPattern = styled.div`
     width: 50px;
 
     border: 10px solid black;
+    margin: 10px;
 `
 
 const AlignmentPatternInside = styled.div`
