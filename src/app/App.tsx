@@ -6,7 +6,7 @@ import { HomePage } from './pages/HomePage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/arkaitzvizuete.com">
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/23" element={<TwentyThreePage/>} />
