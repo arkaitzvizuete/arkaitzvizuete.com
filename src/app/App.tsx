@@ -12,7 +12,6 @@ function App() {
       <Route path="/23" element={<TwentyThreePage/>} />
       <Route path='/*' element={<NotFoundPage/>} />
     </Routes>
-    <App />
     </BrowserRouter>
   );
 }
