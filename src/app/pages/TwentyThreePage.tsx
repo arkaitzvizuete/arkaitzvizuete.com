@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components"
 
 export const TwentyThreePage = () => {
@@ -7,22 +7,10 @@ export const TwentyThreePage = () => {
 
     const setPhoneScreenHeight = (): void => {
       setScreenHeight(window.innerHeight);
-    };
-  
-    useEffect(() => {
-      const handleResize = () => {
-        requestAnimationFrame(() => {
-          setPhoneScreenHeight();
-        });
-      };
-  
-      window.addEventListener('resize', handleResize);
-  
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, [])
+    }
     
+    window.addEventListener('resize', setPhoneScreenHeight)
+
     return (
         <Container screenHeight={screenHeight}>
             <TopRow>
@@ -33,9 +21,14 @@ export const TwentyThreePage = () => {
                     <AlignmentPatternInside/>
                 </AlignmentPattern>
             </TopRow>
-            <AlignmentPattern>
-                <AlignmentPatternInside/>
-            </AlignmentPattern>
+            <Content>
+
+            </Content>
+            <div>
+                <AlignmentPattern>
+                    <AlignmentPatternInside/>
+                </AlignmentPattern>
+            </div>
         </Container>
     )
 }
@@ -77,4 +70,10 @@ const TopRow = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+`
+const Content = styled.div`
+    display: flex;
+    justify-content: space-around;
+
+    border: 1px solid black;
 `
