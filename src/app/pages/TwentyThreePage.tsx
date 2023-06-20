@@ -1,7 +1,10 @@
 import { useState } from "react";
 import styled from "styled-components"
+import { CountDown } from "../components/Coundown";
 
 export const TwentyThreePage = () => {
+
+    const luggageTargetDate = new Date(2023, 6, 21, 12, 0, 0);
 
     const [screenHeight, setScreenHeight] = useState<number>(window.innerHeight);
 
@@ -22,7 +25,7 @@ export const TwentyThreePage = () => {
                 </AlignmentPattern>
             </TopRow>
             <Content>
-
+                <CountDown targetDate={luggageTargetDate} />
             </Content>
             <div>
                 <AlignmentPattern>
