@@ -42,7 +42,7 @@ export const CountDown = (props: CountDownProps) => {
 const StyledCountDown = styled.span`
     font-family: 'SquareDotMatrix', sans-serif;
     font-size: 3rem;
-    color: black;
+    color: white;
 
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;

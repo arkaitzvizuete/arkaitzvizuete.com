@@ -25,7 +25,18 @@ export const TwentyThreePage = () => {
                 </AlignmentPattern>
             </TopRow>
             <Content>
-                <CountDown targetDate={luggageTargetDate} />
+                <StyledTitle>
+                    CONGRATULATIONS
+                </StyledTitle>
+                <StyledText>
+                    Reserve the dates: 28 - 29 - 30 / JULY
+                </StyledText>
+                <StyledText>
+                    More info coming soon
+                    <br/>
+                    <CountDown targetDate={luggageTargetDate} />
+                </StyledText>
+                
             </Content>
             <div>
                 <AlignmentPattern>
@@ -50,13 +61,15 @@ const Container = styled.div<ContainerProps>`
     margin: 0;
 
     height: ${(props) => props.screenHeight}px;
+
+    background-color: black;
 `
 
 const AlignmentPattern = styled.div`
     height: 50px;
     width: 50px;
 
-    border: 10px solid black;
+    border: 10px solid white;
     margin: 10px;
 `
 
@@ -64,7 +77,7 @@ const AlignmentPatternInside = styled.div`
     height: 30px;
     width: 30px;
     
-    background: black;
+    background: white;
 
     margin: 10px;
 `
@@ -76,7 +89,25 @@ const TopRow = styled.div`
 `
 const Content = styled.div`
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    flex-grow: 1;
 
-    border: 1px solid black;
+    justify-content: space-around;
+`
+
+const StyledTitle = styled.span`
+    font-family: 'SquareDotMatrix', sans-serif;
+    font-size: 5rem;
+    color: white;
+
+
+`
+
+const StyledText = styled.span`
+    font-family: 'SquareDotMatrix', sans-serif;
+    font-size: 3rem;
+    color: white;
+
+
 `
