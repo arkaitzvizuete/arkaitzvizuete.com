@@ -103,7 +103,7 @@ const Content = styled.div`
 
 const StyledTitle = styled.span`
     font-family: 'SquareDotMatrix', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: white;
 `
 
