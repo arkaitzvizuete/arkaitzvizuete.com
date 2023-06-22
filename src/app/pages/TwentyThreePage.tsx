@@ -26,13 +26,13 @@ export const TwentyThreePage = () => {
             </TopRow>
             <Content>
                 <StyledText>
-                    Reserve the dates
+                    save the dates
                     <br/>
-                    28 - 29 - 30 / JULY
+                    28 - 29 - 30 / july
                 </StyledText>
                 <StyledSubThing>
                     <StyledText>
-                        More info coming in
+                        more info coming soon
                     </StyledText>
                     <StyledSubText>
                         <CountDown targetDate={luggageTargetDate} />
