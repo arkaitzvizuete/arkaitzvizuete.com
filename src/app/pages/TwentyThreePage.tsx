@@ -25,18 +25,19 @@ export const TwentyThreePage = () => {
                 </AlignmentPattern>
             </TopRow>
             <Content>
-                <StyledTitle>
-                    CONGRATULATIONS
-                </StyledTitle>
                 <StyledText>
-                    Reserve the dates: 28 - 29 - 30 / JULY
-                </StyledText>
-                <StyledText>
-                    More info coming soon
+                    Reserve the dates
                     <br/>
-                    <CountDown targetDate={luggageTargetDate} />
+                    28 - 29 - 30 / JULY
                 </StyledText>
-                
+                <StyledSubThing>
+                    <StyledText>
+                        More info coming in
+                    </StyledText>
+                    <StyledSubText>
+                        <CountDown targetDate={luggageTargetDate} />
+                    </StyledSubText>
+                </StyledSubThing>
             </Content>
             <div>
                 <AlignmentPattern>
@@ -93,21 +94,29 @@ const Content = styled.div`
     text-align: center;
     flex-grow: 1;
 
-    justify-content: space-around;
+    justify-content: center;
+    gap: 3rem;
 `
 
 const StyledTitle = styled.span`
     font-family: 'SquareDotMatrix', sans-serif;
-    font-size: 5rem;
+    font-size: 2.5rem;
     color: white;
-
-
 `
 
 const StyledText = styled.span`
     font-family: 'SquareDotMatrix', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     color: white;
+`
 
+const StyledSubThing = styled.div`
+    display: flex;
+    flex-direction: column;
+`
 
+const StyledSubText = styled.span`
+    font-family: 'SquareDotMatrix', sans-serif;
+    font-size: 1%.5;
+    color: white;
 `
