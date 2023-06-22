@@ -7,31 +7,50 @@ interface CountDownProps {
 
 export const CountDown = (props: CountDownProps) => {
 
-    const [days, setDays] = useState<number>()
-    const [hours, setHours] = useState<number>()
-    const [minutes, setMinutes] = useState<number>()
-    const [seconds, setSeconds] = useState<number>()
+    const [days, setDays] = useState<string>()
+    const [hours, setHours] = useState<string>()
+    const [minutes, setMinutes] = useState<string>()
+    const [seconds, setSeconds] = useState<string>()
+
+    const getDays = (timeRemaining: number) => {
+      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24))
+      return days < 10 ? `0${days}` : days.toString()
+    }
+
+    const getHours = (timeRemaining: number) => {
+      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      return hours < 10 ? `0${hours}` : hours.toString()
+    }
+
+    const getMinutes = (timeRemaining: number) => {
+      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60))
+      return minutes < 10 ? `0${minutes}` : minutes.toString()
+    }
+
+    const getSeconds = (timeRemaining: number) => {
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000)
+      return seconds < 10 ? `0${seconds}` : seconds.toString()
+    }
 
     useEffect(() => {
         const interval = setInterval(() => {
-          const currentTime = new Date();
-          const timeRemaining = props.targetDate.getTime() - currentTime.getTime();
-
+          const currentTime = new Date()
+          const timeRemaining = props.targetDate.getTime() - currentTime.getTime()
           
-          setDays(Math.floor(timeRemaining / (1000 * 60 * 60 * 24)))
-          setHours(Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)))
-          setMinutes(Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60)))
-          setSeconds( Math.floor((timeRemaining % (1000 * 60)) / 1000))
+          setDays(getDays(timeRemaining))
+          setHours(getHours(timeRemaining))
+          setMinutes(getMinutes(timeRemaining))
+          setSeconds(getSeconds(timeRemaining))
     
           if (timeRemaining < 0) {
-            clearInterval(interval);
+            clearInterval(interval)
             // Handle countdown completion here
 
           }
-        }, 1000);
+        }, 1000)
     
         return () => clearInterval(interval)
-      }, []);
+      }, [])
     return (
         <StyledCountDown>
             {days} : {hours} : {minutes} : {seconds}

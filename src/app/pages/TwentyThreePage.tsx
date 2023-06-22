@@ -4,7 +4,7 @@ import { CountDown } from "../components/Coundown";
 
 export const TwentyThreePage = () => {
 
-    const luggageTargetDate = new Date(2023, 6, 21, 12, 0, 0);
+    const luggageTargetDate = new Date(2023, 6, 8, 12, 0, 0);
 
     const [screenHeight, setScreenHeight] = useState<number>(window.innerHeight);
 
@@ -25,11 +25,14 @@ export const TwentyThreePage = () => {
                 </AlignmentPattern>
             </TopRow>
             <Content>
-                <StyledText>
+                <StyledSubThing>
+                    <StyledTitle>
                     save the dates
-                    <br/>
+                    </StyledTitle>
+                    <StyledText>
                     28 - 29 - 30 / july
-                </StyledText>
+                    </StyledText>
+                </StyledSubThing>
                 <StyledSubThing>
                     <StyledText>
                         more info coming soon
