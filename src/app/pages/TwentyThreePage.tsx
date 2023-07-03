@@ -2,10 +2,13 @@ import { useState } from "react";
 import styled from "styled-components"
 import { CountDown } from "../components/Coundown";
 
+import MenuIcon from '../resources/menu.png'
+
 export const TwentyThreePage = () => {
 
-    const luggageTargetDate = new Date(2023, 6, 8, 12, 0, 0);
+    const luggageTargetDate = new Date(2023, 6, 15, 12, 0, 0);
 
+    const [showMenu, setShowMenu] = useState(false)
     const [screenHeight, setScreenHeight] = useState<number>(window.innerHeight);
 
     const setPhoneScreenHeight = (): void => {
@@ -14,12 +17,25 @@ export const TwentyThreePage = () => {
     
     window.addEventListener('resize', setPhoneScreenHeight)
 
+    const toggleMenu = () => {
+        setShowMenu(!showMenu)
+    }
+
     return (
         <Container screenHeight={screenHeight}>
             <TopRow>
                 <AlignmentPattern>
-                    <AlignmentPatternInside/>
+                    <AlignmentPatternInside>
+                        <StyledMenuIcon src={MenuIcon} onClick={toggleMenu} />
+                    </AlignmentPatternInside>
                 </AlignmentPattern>
+                {showMenu &&
+                <Menu>
+                    <MenuText>
+                        easter egg coming soon
+                    </MenuText>
+                </Menu>
+                }
                 <AlignmentPattern>
                     <AlignmentPatternInside/>
                 </AlignmentPattern>
@@ -122,4 +138,21 @@ const StyledSubText = styled.span`
     font-family: 'SquareDotMatrix', sans-serif;
     font-size: 1%.5;
     color: white;
+`
+
+const StyledMenuIcon = styled.img`
+    width: 30px;
+`
+
+const Menu = styled.div`
+    background-color: white;
+    display: flex;
+    flex-grow: 1;
+
+    margin: 10px;
+    justify-content: center;
+`
+
+const MenuText = styled.p`
+    font-family: 'SquareDotMatrix', sans-serif;
 `
