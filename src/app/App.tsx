@@ -5,6 +5,7 @@ import { NotFoundPage } from './pages/NotFoundPage';
 import { HomePage } from './pages/HomePage';
 import { createGlobalStyle } from 'styled-components';
 import SquareDotMatrix from "./core/fonts/Square-Dot-Matrix/Square-Dot-Matrix.ttf"
+import { CreditsPage } from './pages/CreditsPage';
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/23" element={<TwentyThreePage/>} />
+        <Route path="/credits" element={<CreditsPage/>} />
         <Route path='*' element={<NotFoundPage/>} />
       </Routes>
     </BrowserRouter>

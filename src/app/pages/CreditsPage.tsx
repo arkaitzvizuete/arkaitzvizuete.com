@@ -1,14 +1,9 @@
 import { useState } from "react";
-import styled from "styled-components"
-import { CountDown } from "../components/Coundown";
+import styled from "styled-components";
 
-import MenuIcon from '../resources/menu.png'
 
-export const TwentyThreePage = () => {
+export const CreditsPage = () => {
 
-    const luggageTargetDate = new Date(2023, 6, 15, 12, 0, 0);
-
-    const [showMenu, setShowMenu] = useState(false)
     const [screenHeight, setScreenHeight] = useState<number>(window.innerHeight);
 
     const setPhoneScreenHeight = (): void => {
@@ -17,47 +12,19 @@ export const TwentyThreePage = () => {
     
     window.addEventListener('resize', setPhoneScreenHeight)
 
-    const toggleMenu = () => {
-        setShowMenu(!showMenu)
-    }
-
     return (
         <Container screenHeight={screenHeight}>
             <TopRow>
                 <AlignmentPattern>
-                    <AlignmentPatternInside>
-                        
-                    </AlignmentPatternInside>
+                    <AlignmentPatternInside />
                 </AlignmentPattern>
-                {/*showMenu &&
-                <Menu>
-                    <MenuText>
-                        easter egg coming soon
-                    </MenuText>
-                </Menu>
-                */}
                 <AlignmentPattern>
                     <AlignmentPatternInside/>
                 </AlignmentPattern>
             </TopRow>
 
             <Content>
-                <StyledSubThing>
-                    <StyledTitle>
-                    save the dates
-                    </StyledTitle>
-                    <StyledText>
-                    28 - 29 - 30 / july
-                    </StyledText>
-                </StyledSubThing>
-                <StyledSubThing>
-                    <StyledText>
-                        more info coming soon
-                    </StyledText>
-                    <StyledSubText>
-                        <CountDown targetDate={luggageTargetDate} />
-                    </StyledSubText>
-                </StyledSubThing>
+      
             </Content>
             <div>
                 <AlignmentPattern>
@@ -67,6 +34,7 @@ export const TwentyThreePage = () => {
         </Container>
     )
 }
+
 
 interface ContainerProps {
     screenHeight: number;
@@ -143,17 +111,4 @@ const StyledSubText = styled.span`
 
 const StyledMenuIcon = styled.img`
     width: 30px;
-`
-
-const Menu = styled.div`
-    background-color: white;
-    display: flex;
-    flex-grow: 1;
-
-    margin: 10px;
-    justify-content: center;
-`
-
-const MenuText = styled.p`
-    font-family: 'SquareDotMatrix', sans-serif;
 `
