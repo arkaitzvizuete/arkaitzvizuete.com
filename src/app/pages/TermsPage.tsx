@@ -1,18 +1,17 @@
 import { useState } from "react";
 import styled from "styled-components";
 
+export const TermsPage = () => {
 
-export const CreditsPage = () => {
-
-    const [screenHeight, setScreenHeight] = useState<number>(window.innerHeight);
+    const [screenHeight, setScreenHeight] = useState<number>(window.innerHeight)
 
     const setPhoneScreenHeight = (): void => {
-      setScreenHeight(window.innerHeight);
+      setScreenHeight(window.innerHeight)
     }
     
     window.addEventListener('resize', setPhoneScreenHeight)
 
-    return (
+    return(
         <Container screenHeight={screenHeight}>
             <TopRow>
                 <AlignmentPattern>
@@ -24,25 +23,21 @@ export const CreditsPage = () => {
             </TopRow>
             <Content>
                 <StyledText>
-                    Producción<br/>
-                    NAGORE MAROTO<br/>
-                    ARKAITZ VIZUETE<br/><br/>
-                    Dirección artística<br/>
-                    OIHANA BIKUÑA<br/><br/>
-                    Guión<br/>
-                    AITOR CARRASCO<br/><br/>
-                    Gaffer<br/>
-                    ALBERTO LA ROSA<br/><br/>
-                    Best Boy<br/>
-                    IÑAKI BERUETE<br/><br/>
-                    AGRADECIMIENTOS<br/>
-                    RAMÓN BILBAO<br/>
-                    AYUNTAMIENTO DE LOGROÑO<br/>
-                    ZUMARDI<br/>
-                    ERRETA CREATIVE RAIMA<br/>
-                    MARISA VIELBA<br/>
-                    ORIOL SUILS<br/>
-                    GITHUB<br/>
+                Nos complace anunciarle que entre el 28 y 30 de julio disfrutará de una experiencia de índole confidencial.
+                <br/>
+                La asistencia a dicho evento requerirá de los enseres propias del periodo estival en el que nos encontramos. Nos consta que ya cuenta con una mochila mierd... kit de supervivencia adecuado para este tipo de planes, así que le invitamos a que lo traiga.
+                <br/>
+                El día 28 al mediodía pasaremos a recogerla en nuestros carruajes de cuatro neumáticos y menos caballos de los que sus dueños querrían. La vuelta está prevista el domingo al mediodía también.
+                <br/>
+                Si tiene dudas póngase en contacto con el equipo.* Le esperamos.
+                <br/>
+                <br/>
+                Atentamente,
+                <br/>
+                Bullet people.
+                <br/>
+                <br/>
+                *El equipo no se hace responsable de no esclarecer todas sus dudas.
                 </StyledText>
             </Content>
             <div>
@@ -53,7 +48,6 @@ export const CreditsPage = () => {
         </Container>
     )
 }
-
 
 interface ContainerProps {
     screenHeight: number;

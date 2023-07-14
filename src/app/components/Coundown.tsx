@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 interface CountDownProps {
     targetDate: Date
+    onCountdownFinish: Function
 }
 
 export const CountDown = (props: CountDownProps) => {
@@ -36,17 +37,17 @@ export const CountDown = (props: CountDownProps) => {
         const interval = setInterval(() => {
           const currentTime = new Date()
           const timeRemaining = props.targetDate.getTime() - currentTime.getTime()
-          
+    
+          if (timeRemaining <= 0) {
+            clearInterval(interval)
+            
+            props.onCountdownFinish()
+          }
+
           setDays(getDays(timeRemaining))
           setHours(getHours(timeRemaining))
           setMinutes(getMinutes(timeRemaining))
           setSeconds(getSeconds(timeRemaining))
-    
-          if (timeRemaining < 0) {
-            clearInterval(interval)
-            // Handle countdown completion here
-
-          }
         }, 1000)
     
         return () => clearInterval(interval)
