@@ -24,18 +24,30 @@ export const CreditsPage = () => {
             </TopRow>
             <Content>
                 <StyledText>
-                    Producción<br/>
+                    <StyledTitle>
+                    producers
+                    </StyledTitle>
                     NAGORE MAROTO<br/>
-                    ARKAITZ VIZUETE<br/><br/>
-                    Dirección artística<br/>
-                    OIHANA BIKUÑA<br/><br/>
-                    Guión<br/>
-                    AITOR CARRASCO<br/><br/>
-                    Gaffer<br/>
-                    ALBERTO LA ROSA<br/><br/>
-                    Best Boy<br/>
-                    IÑAKI BERUETE<br/><br/>
-                    AGRADECIMIENTOS<br/>
+                    ARKAITZ VIZUETE<br/>
+                    <StyledTitle>
+                    Art direcction
+                    </StyledTitle>
+                    OIHANA BIKUÑA
+                    <StyledTitle>
+                    producers
+                    </StyledTitle>
+                    AITOR CARRASCO<br/>
+                    <StyledTitle>
+                    Gaffer
+                    </StyledTitle>
+                    ALBERTO LA ROSA<br/>
+                    <StyledTitle>
+                    Best Boy
+                    </StyledTitle>                
+                    IÑAKI BERUETE<br/>
+                    <StyledTitle>
+                    special thanks
+                    </StyledTitle>
                     RAMÓN BILBAO<br/>
                     AYUNTAMIENTO DE LOGROÑO<br/>
                     ZUMARDI<br/>
@@ -105,11 +117,13 @@ const Content = styled.div`
     gap: 3rem;
 `
 
+const StyledTitle = styled.p`
+    font-size: 23px;
+`
+
 const StyledText = styled.p`
     font-family: 'SquareDotMatrix', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     color: white;
-
-    padding: 15px;
 
 `

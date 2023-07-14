@@ -8,7 +8,8 @@ import { Link } from "react-router-dom";
 export const TwentyThreePage = () => {
 
     const luggageTargetDate = new Date(2023, 6, 15, 12, 0, 0)
-    const testDate = new Date(2023, 6, 14, 22, 58, 0)
+    const testDate = new Date(2023, 6, 15, 1, 30, 0)
+    const lastDate = new Date(2023, 6, 27, 22, 0, 0)
 
     const [showMenu, setShowMenu] = useState(false)
     const [countdownComplete, setCountdownComplete] = useState(false)
@@ -40,12 +41,7 @@ export const TwentyThreePage = () => {
                 <Menu>
                     <StyledLink to='credits'>
                         <MenuText>
-                            Ir a creditos
-                        </MenuText>
-                    </StyledLink>
-                    <StyledLink to='terms'>     
-                        <MenuText>
-                            Ir a terminos y condiciones
+                            staff
                         </MenuText>
                     </StyledLink>
                 </Menu>
@@ -76,9 +72,32 @@ export const TwentyThreePage = () => {
             }
             {countdownComplete && 
             <Content>
-                <Text>
-                    :)
-                </Text>
+                <StyledSubThing>
+                    <StyledTitle>
+                        save the dates
+                    </StyledTitle>
+                    <StyledText>
+                        28 - 29 - 30 / july
+                    </StyledText>
+                </StyledSubThing>
+                <StyledSubThing>
+                    <StyledText>
+                        required equipment
+                    </StyledText>
+                    <StyledSubText>
+                        - Ropa y calzado manchable y mojable<br/>
+                        - La mochila esa para planes sorpresa<br/>
+                        - Lay's al punto de sal
+                    </StyledSubText>
+                </StyledSubThing>
+                <StyledSubThing>
+                    <StyledText>
+                        more info coming soon
+                    </StyledText>
+                    <StyledSubText>
+                        <CountDown targetDate={lastDate} onCountdownFinish={handleCountdownFinish} />
+                    </StyledSubText>
+                </StyledSubThing>
             </Content>
             }
             <div>
