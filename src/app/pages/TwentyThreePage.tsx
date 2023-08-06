@@ -7,9 +7,8 @@ import { Link } from "react-router-dom";
 
 export const TwentyThreePage = () => {
 
-    const luggageTargetDate = new Date(2023, 6, 15, 12, 0, 0)
-    const testDate = new Date(2023, 6, 15, 1, 30, 0)
-    const lastDate = new Date(2023, 6, 27, 22, 0, 0)
+    const testDate = new Date(2023, 6, 27, 19, 9, 0)
+    const finalDate = new Date(2023, 6, 27, 22, 0, 0)
 
     const [showMenu, setShowMenu] = useState(false)
     const [countdownComplete, setCountdownComplete] = useState(false)
@@ -50,27 +49,6 @@ export const TwentyThreePage = () => {
                     <AlignmentPatternInside/>
                 </AlignmentPattern>
             </TopRow>
-            {!countdownComplete && 
-            <Content>
-                <StyledSubThing>
-                    <StyledTitle>
-                        save the dates
-                    </StyledTitle>
-                    <StyledText>
-                        28 - 29 - 30 / july
-                    </StyledText>
-                </StyledSubThing>
-                <StyledSubThing>
-                    <StyledText>
-                        more info coming soon
-                    </StyledText>
-                    <StyledSubText>
-                        <CountDown targetDate={luggageTargetDate} onCountdownFinish={handleCountdownFinish} />
-                    </StyledSubText>
-                </StyledSubThing>
-            </Content>
-            }
-            {countdownComplete && 
             <Content>
                 <StyledSubThing>
                     <StyledTitle>
@@ -90,16 +68,27 @@ export const TwentyThreePage = () => {
                         - Lay's al punto de sal
                     </StyledSubText>
                 </StyledSubThing>
+                {!countdownComplete && 
                 <StyledSubThing>
                     <StyledText>
                         more info coming soon
                     </StyledText>
                     <StyledSubText>
-                        <CountDown targetDate={lastDate} onCountdownFinish={handleCountdownFinish} />
+                        <CountDown targetDate={testDate} onCountdownFinish={handleCountdownFinish} />
                     </StyledSubText>
                 </StyledSubThing>
+                }
+                {countdownComplete && 
+                <StyledSubThing>
+                    <StyledSubText>
+                        <StyledFinalLink to='final'>
+                            Click here to get the last details
+                        </StyledFinalLink>
+                    </StyledSubText>
+                </StyledSubThing>
+                }
+
             </Content>
-            }
             <div>
                 <AlignmentPattern>
                     <AlignmentPatternInside/>
@@ -215,12 +204,11 @@ const MenuText = styled.p`
     }
 `
 
-const Text = styled.p`
-    font-family: 'SquareDotMatrix', sans-serif;
-    font-size: 1%.5;
-    color: white;
-`
-
 const StyledLink = styled(Link)`
     text-decoration: none;
+`
+
+const StyledFinalLink = styled(Link)`
+    text-decoration: underline;
+    color: white;
 `
